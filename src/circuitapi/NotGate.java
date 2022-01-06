@@ -19,10 +19,6 @@ public class NotGate<T extends Object> extends UnaryCircuit<T> {
         if(operand.getValue() instanceof Boolean){
             value = (!(Boolean) operand.getValue());
             return (T)(value);
-        }else if(operand.getValue() instanceof Integer){
-            if(operand.getValue() == 1){
-
-            }
         }
         return null;
     }
