@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author 20215138
+ * @author Renisa, Shyam, Shabnam, Moslem
  */
 public class JUnitTestAPI {
     
@@ -17,5 +17,7 @@ public class JUnitTestAPI {
     }
 
      @Test
-     public void hello() {}
+     public void hello() {
+     assertEquals("hello","hello");
+     }
 }
