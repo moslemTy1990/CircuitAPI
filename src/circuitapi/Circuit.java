@@ -10,6 +10,6 @@ package circuitapi;
  * @author Renisa, Shyam, Shabnam, Moslem
  */
 public interface Circuit<T extends Object> {
-    public T getValue();
+    public T getValue() throws Exception;
     public void setValue(T t);
 }

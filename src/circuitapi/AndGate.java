@@ -6,6 +6,7 @@
 package circuitapi;
 
 import javax.swing.text.StyledEditorKit;
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.function.BinaryOperator;
 
 /**
@@ -19,7 +20,10 @@ public class AndGate<T extends Object> extends BinaryCircuit<T>{
     }
     
    @Override
-    public T getValue() {
+    public T getValue() throws Exception {
+        if(!(rOperand.getValue() instanceof Boolean) || !(lOperant.getValue() instanceof Boolean))
+            throw new Exception("The input type of And should be Boolean");
+
         Object value= (Boolean)rOperand.getValue() && (Boolean)lOperant.getValue();
         return (T)value;
 
