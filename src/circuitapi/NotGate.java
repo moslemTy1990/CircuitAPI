@@ -14,12 +14,12 @@ public class NotGate<T extends Object> extends UnaryCircuit<T> {
     }
 
     @Override
-    public T getValue() {
-        Object value;
-        if(operand.getValue() instanceof Boolean){
-            value = (!(Boolean) operand.getValue());
-            return (T)(value);
-        }
-        return null;
+    public T getValue() throws Exception {
+        if(!(operand.getValue() instanceof Boolean))
+            throw new Exception("The input type of NOT should be Boolean");
+
+        Object value= !(Boolean)operand.getValue();
+        return (T)value;
+
     }
 }

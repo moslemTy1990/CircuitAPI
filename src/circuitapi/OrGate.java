@@ -15,7 +15,10 @@ public class OrGate<T extends Object> extends BinaryCircuit<T> {
     }
 
     @Override
-    public T getValue() {
+    public T getValue() throws Exception {
+        if(!(rOperand.getValue() instanceof Boolean) || !(lOperant.getValue() instanceof Boolean))
+            throw new Exception("The input type of OR should be Boolean");
+
         Object value= (Boolean)rOperand.getValue() || (Boolean)lOperant.getValue();
         return (T)value;
 

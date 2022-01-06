@@ -18,7 +18,7 @@ public class UnaryCircuit<T extends Object> implements Circuit<T>{
     }
 
     @Override
-    public T getValue() {
+    public T getValue() throws Exception {
         return null;
     }
 
