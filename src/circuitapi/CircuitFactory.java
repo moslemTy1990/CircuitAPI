@@ -10,11 +10,11 @@ package circuitapi;
  * @author 20215138
  */
 public class CircuitFactory {
-    public Circuit createAnd(Circuit circuit){
-        return null;
+    public Circuit<T> createAnd(Circuit<T> lCircuit, Circuit<T> rCircuit){
+        Circuit<T> andCircuit = new ANDGate<T>(lCircuit,rCircuit);
     }
     
-    public Circuit createConstant(Circuit circuit){
+    public Circuit createConstant(){
         return null;
     }
       
@@ -22,7 +22,7 @@ public class CircuitFactory {
         return null;
     }
     
-    public Circuit createOr(Circuit circuit){
+    public Circuit createOr(Circuit lCircuit, Circuit rCircuit){
         return null;
     }
     
