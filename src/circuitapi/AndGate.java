@@ -5,13 +5,14 @@
  */
 package circuitapi;
 
+import javax.swing.text.StyledEditorKit;
 import java.util.function.BinaryOperator;
 
 /**
  *
  * @author 20215138
  */
-public class AndGate<T> extends BinaryCircuit<T>{
+public class AndGate<T extends Object> extends BinaryCircuit<T>{
 
     public AndGate(Circuit rCircuit, Circuit lCircuit) {
         super(rCircuit, lCircuit);
@@ -19,7 +20,9 @@ public class AndGate<T> extends BinaryCircuit<T>{
     
    @Override
     public T getValue() {
-      return new Boolean(rOperand.getValue() && new Boolean(lOperant.getValue());
+        Object value=  (((Boolean)rOperand.getValue()) && ((Boolean)lOperant.getValue()));
+        return (T)value;
+
     }
     
 }

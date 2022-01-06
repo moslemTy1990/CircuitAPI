@@ -9,7 +9,7 @@ package circuitapi;
  *
  * @author Renisa, Shyam, Shabnam, Moslem
  */
-public interface Circuit<T> {
+public interface Circuit<T extends Object> {
     public T getValue();
     public void setValue(T t);
 }
