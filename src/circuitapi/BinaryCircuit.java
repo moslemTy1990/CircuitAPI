@@ -11,15 +11,23 @@ package circuitapi;
  * @author 20215138
  */
 public class BinaryCircuit<T> implements Circuit<T>{
+    
+    protected Circuit lOperant;
+    protected Circuit rOperand;
+    
+    public BinaryCircuit(Circuit rCircuit,Circuit lCircuit){
+      this.lOperant = lCircuit;
+      this.rOperand = rCircuit;
+    }
 
     @Override
     public T getValue() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      return null;
     }
 
     @Override
     public void setValue(T t) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+
     }
     
     

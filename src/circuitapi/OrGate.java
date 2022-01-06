@@ -10,5 +10,8 @@ package circuitapi;
  * @author 20215138
  */
 public class OrGate {
+    public boolean getValue(){
+        return false;
+    }
     
 }

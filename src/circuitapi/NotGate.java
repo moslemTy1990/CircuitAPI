@@ -9,6 +9,9 @@ package circuitapi;
  *
  * @author 20215138
  */
-public class NotGate {
+public class NotGate implements UnaryCircuit{
+    public boolean getValue(){
+        return false;
+    }
     
 }
