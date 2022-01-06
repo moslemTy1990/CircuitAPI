@@ -9,7 +9,7 @@ import java.awt.*;
 
 /**
  *
- * @author 20215138
+ * @author Renisa, Shyam, Shabnam, Moslem
  */
 public class Constant<T extends Object> implements Circuit<T>{
     private T value;

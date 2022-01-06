@@ -8,7 +8,7 @@ package circuitapi;
 
 /**
  *
- * @author 20215138
+ * @author Renisa, Shyam, Shabnam, Moslem
  */
 public class BinaryCircuit<T extends Object> implements Circuit<T>{
     

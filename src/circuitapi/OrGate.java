@@ -7,7 +7,7 @@ package circuitapi;
 
 /**
  *
- * @author 20215138
+ * @author Renisa, Shyam, Shabnam, Moslem
  */
 public class OrGate<T extends Object> extends BinaryCircuit<T> {
     public OrGate(Circuit rCircuit, Circuit lCircuit) {

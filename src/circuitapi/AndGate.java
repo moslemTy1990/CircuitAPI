@@ -11,7 +11,7 @@ import java.util.function.BinaryOperator;
 
 /**
  *
- * @author 20215138
+ * @author Renisa, Shyam, Shabnam, Moslem
  */
 public class AndGate<T extends Object> extends BinaryCircuit<T>{
 

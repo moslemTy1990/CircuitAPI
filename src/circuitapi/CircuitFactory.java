@@ -7,7 +7,7 @@ package circuitapi;
 
 /**
  *
- * @author 20215138
+ * @author Renisa, Shyam, Shabnam, Moslem
  */
 public class CircuitFactory<T> {
     
@@ -25,7 +25,5 @@ public class CircuitFactory<T> {
     
     public Circuit createOr(Circuit lCircuit, Circuit rCircuit){
          return new OrGate<T>(lCircuit,rCircuit);
-    }
-    
-    
+    }    
 }

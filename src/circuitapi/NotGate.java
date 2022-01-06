@@ -7,7 +7,7 @@ package circuitapi;
 
 /**
  *
- * @author 20215138
+ * @author Renisa, Shyam, Shabnam, Moslem
  */
 public class NotGate<T extends Object> extends UnaryCircuit<T> {
     public NotGate(Circuit circuit) {super(circuit);
