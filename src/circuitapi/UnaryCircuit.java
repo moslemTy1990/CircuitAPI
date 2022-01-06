@@ -9,6 +9,22 @@ package circuitapi;
  *
  * @author 20215138
  */
-public interface UnaryCircuit {
-    
+public class UnaryCircuit<T extends Object> implements Circuit<T>{
+
+    protected Circuit operand;
+
+    public UnaryCircuit(Circuit circuit){
+        this.operand = circuit;
+    }
+
+    @Override
+    public T getValue() {
+        return null;
+    }
+
+    @Override
+    public void setValue(T t) {
+
+    }
+
 }

@@ -9,9 +9,21 @@ package circuitapi;
  *
  * @author 20215138
  */
-public class NotGate implements UnaryCircuit{
-    public boolean getValue(){
-        return false;
+public class NotGate<T extends Object> extends UnaryCircuit<T> {
+    public NotGate(Circuit circuit) {super(circuit);
     }
-    
+
+    @Override
+    public T getValue() {
+        Object value;
+        if(operand.getValue() instanceof Boolean){
+            value = (!(Boolean) operand.getValue());
+            return (T)(value);
+        }else if(operand.getValue() instanceof Integer){
+            if(operand.getValue() == 1){
+
+            }
+        }
+        return null;
+    }
 }
