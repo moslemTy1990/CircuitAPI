@@ -9,13 +9,7 @@ package circuitapi;
  *
  * @author Renisa, Shyam, Shabnam, Moslem
  */
-public class CircuitAPI {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
-    
+public interface Circuit<T> {
+    public T getValue();
+    public void setValue(T t);
 }
