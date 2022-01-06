@@ -3,32 +3,30 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package circuitapi;
+package circuitelements;
 
+import circuitfactory.Circuit;
 
 /**
  *
  * @author Renisa, Shyam, Shabnam, Moslem
  */
-public class BinaryCircuit<T extends Object> implements Circuit<T>{
-    
-    protected Circuit lOperant;
-    protected Circuit rOperand;
-    
-    public BinaryCircuit(Circuit rCircuit,Circuit lCircuit){
-      this.lOperant = lCircuit;
-      this.rOperand = rCircuit;
+public class UnaryCircuit<T extends Object> implements Circuit<T>{
+
+    protected Circuit operand;
+
+    public UnaryCircuit(Circuit circuit){
+        this.operand = circuit;
     }
 
     @Override
     public T getValue() throws Exception {
-      return null;
+        return null;
     }
 
     @Override
     public void setValue(T t) {
 
     }
-    
-    
+
 }

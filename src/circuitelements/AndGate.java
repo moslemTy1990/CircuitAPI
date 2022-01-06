@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package circuitapi;
+package circuitelements;
 
+import circuitfactory.Circuit;
 import javax.swing.text.StyledEditorKit;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.function.BinaryOperator;
