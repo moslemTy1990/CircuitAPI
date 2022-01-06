@@ -20,7 +20,7 @@ public class AndGate<T extends Object> extends BinaryCircuit<T>{
     
    @Override
     public T getValue() {
-        Object value=  (((Boolean)rOperand.getValue()) && ((Boolean)lOperant.getValue()));
+        Object value= (Boolean)rOperand.getValue() && (Boolean)lOperant.getValue();
         return (T)value;
 
     }

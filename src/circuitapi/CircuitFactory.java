@@ -9,9 +9,10 @@ package circuitapi;
  *
  * @author 20215138
  */
-public class CircuitFactory {
+public class CircuitFactory<T> {
     public Circuit<T> createAnd(Circuit<T> lCircuit, Circuit<T> rCircuit){
-        Circuit<T> andCircuit = new ANDGate<T>(lCircuit,rCircuit);
+        Circuit<T> andCircuit = new AndGate<T>(lCircuit,rCircuit);
+        return andCircuit;
     }
     
     public Circuit createConstant(){
