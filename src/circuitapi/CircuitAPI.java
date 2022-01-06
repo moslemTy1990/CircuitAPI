@@ -15,19 +15,24 @@ public class CircuitAPI {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws Exception {
-           CircuitFactory factory = new CircuitFactory() ;
+             
+        CircuitFactory factory = new CircuitFactory() ;
+        
         Circuit x1 = factory.createConstant();
         Circuit x2 = factory.createConstant();
-        
-         
+        Circuit x3 = factory.createConstant();
+
         Circuit and = factory.createAnd(x1, x2);
         
+        Circuit or = factory.createOr(x3, and);
         
-        x1.setValue(new Boolean(true));
-        x2.setValue(new Boolean(true));
+        Circuit not = factory.createNot(or);
          
+        x1.setValue(Boolean.valueOf(true));
+        x2.setValue(Boolean.valueOf(true));
+        x3.setValue(Boolean.valueOf(false));
 
-        System.out.println(and.getValue().toString());
+        System.out.println(not.getValue());
     }
     
 }

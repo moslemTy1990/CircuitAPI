@@ -22,7 +22,7 @@ public class Constant<T extends Object> implements Circuit<T>{
 
     @Override
     public T getValue() {
-        return null;
+        return value;
     }
 
     @Override
