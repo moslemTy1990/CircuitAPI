@@ -24,7 +24,7 @@ public class AndGate<T extends Object> extends BinaryCircuit<T>{
     public T getValue() throws Exception {
         
         if(!(rOperand.getValue() instanceof Boolean) || !(lOperant.getValue() instanceof Boolean))
-            throw new Exception("The input type of And should be Boolean");
+            throw new Exception("The input type of AND should be Boolean");
 
         Object value= (Boolean)rOperand.getValue() && (Boolean)lOperant.getValue();
         return (T)value;

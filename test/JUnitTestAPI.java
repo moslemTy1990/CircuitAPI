@@ -4,10 +4,13 @@
  * and open the template in the editor.
  */
 
+package test;
 import circuitfactory.Circuit;
 import circuitfactory.CircuitFactory;
 import org.junit.Test;
 import static org.junit.Assert.*;
+
+import static org.hamcrest.CoreMatchers.*;
 
 /**
  *
@@ -70,20 +73,42 @@ public class JUnitTestAPI {
 
         assertEquals(or.getValue(),false);    
      }
-     
-//       @Test  
-//     public void testX1AndX2Invalid() throws Exception {
-//         
-//        Circuit x1 = factory.createConstant();
-//        Circuit x2 = factory.createConstant();
-//
-//        Circuit and = factory.createAnd(x1, x2);
-//         
-//        x1.setValue("xxx");
-//        x2.setValue(Boolean.valueOf(true));
-//
-//        assertEquals(and.getValue(), new Exception());
-//     }
+
+    @Test
+    public void testX1andX2_invalidInput() throws Exception {
+
+        Circuit x1 = factory.createConstant();
+        Circuit x2 = factory.createConstant();
+
+        Circuit and = factory.createAnd(x1, x2);
+
+        x1.setValue("xxx");
+        x2.setValue(Boolean.valueOf(true));
+
+        try {
+            and.getValue();
+        } catch (Exception exception) {
+            assertThat(exception.getMessage(), is("The input type of AND should be Boolean"));
+        }
+    }
+
+    @Test
+    public void testX1orX2_invalidInput() throws Exception {
+
+        Circuit x1 = factory.createConstant();
+        Circuit x2 = factory.createConstant();
+
+        Circuit and = factory.createOr(x1, x2);
+
+        x1.setValue("xxx");
+        x2.setValue(Boolean.valueOf(true));
+
+        try {
+            and.getValue();
+        } catch (Exception exception) {
+            assertThat(exception.getMessage(), is("The input type of OR should be Boolean"));
+        }
+    }
      
      @Test
      public void testNotX1andX2OrX3andNotX1() throws Exception {
@@ -109,5 +134,33 @@ public class JUnitTestAPI {
 
         assertEquals(NotX1andX2OrX3andNotX1.getValue(),false);    
      }
-     
+
+    @Test
+    public void testNotX1andX2OrX3andNotX1_invalidInput() throws Exception {
+
+        Circuit x1 = factory.createConstant();
+        Circuit x2 = factory.createConstant();
+        Circuit x3 = factory.createConstant();
+
+
+        Circuit notX1 = factory.createNot(x1);
+
+        Circuit X1andX2 = factory.createAnd(x1, x2);
+
+        Circuit NotX1andX2 = factory.createNot(X1andX2);
+
+        Circuit NotX1andX2OrX3 = factory.createOr(NotX1andX2,x3);
+
+        Circuit NotX1andX2OrX3andNotX1 = factory.createOr(NotX1andX2OrX3,notX1);
+
+        x1.setValue(Boolean.valueOf(true));
+        x2.setValue(0);
+        x3.setValue(Boolean.valueOf(false));
+
+        try {
+            NotX1andX2OrX3andNotX1.getValue();
+        } catch (Exception exception) {
+            assertThat(exception.getMessage(), is("The input type of AND should be Boolean"));
+        }
+    }
 }
