@@ -15,7 +15,7 @@ import java.awt.*;
 public class Constant<T extends Object> implements Circuit<T>{
     private T value;
 
-       public Constant(){ }
+    public Constant(){ }
        
     public Constant(T value){
         this.value =value;
