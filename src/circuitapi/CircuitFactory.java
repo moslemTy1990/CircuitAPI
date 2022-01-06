@@ -15,8 +15,8 @@ public class CircuitFactory<T> {
         return andCircuit;
     }
     
-    public Circuit createConstant(){
-        return null;
+    public Circuit createConstant(T value){
+        return new Constant(value);
     }
       
     public Circuit createNot(Circuit circuit){

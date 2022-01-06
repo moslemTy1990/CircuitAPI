@@ -5,12 +5,18 @@
  */
 package circuitapi;
 
+import java.awt.*;
+
 /**
  *
  * @author 20215138
  */
 public class Constant<T> implements Circuit<T>{
-    private boolean value;
+    private T value;
+
+    public Constant(T value){
+        this.value =value;
+    }
 
     @Override
     public T getValue() {
