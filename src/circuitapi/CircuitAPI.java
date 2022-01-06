@@ -14,8 +14,20 @@ public class CircuitAPI {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public static void main(String[] args) throws Exception {
+           CircuitFactory factory = new CircuitFactory() ;
+        Circuit x1 = factory.createConstant();
+        Circuit x2 = factory.createConstant();
+        
+         
+        Circuit and = factory.createAnd(x1, x2);
+        
+        
+        x1.setValue(new Boolean(true));
+        x2.setValue(new Boolean(true));
+         
+
+        System.out.println(and.getValue().toString());
     }
     
 }

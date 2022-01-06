@@ -11,9 +11,11 @@ import java.awt.*;
  *
  * @author 20215138
  */
-public class Constant<T> implements Circuit<T>{
+public class Constant<T extends Object> implements Circuit<T>{
     private T value;
 
+       public Constant(){ }
+       
     public Constant(T value){
         this.value =value;
     }
@@ -24,8 +26,8 @@ public class Constant<T> implements Circuit<T>{
     }
 
     @Override
-    public void setValue(Object t) {
-        this.value =(boolean) t;
+    public void setValue(T t) {
+        this.value = t;
     }
     
 }
