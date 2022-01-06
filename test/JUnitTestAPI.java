@@ -71,4 +71,18 @@ public class JUnitTestAPI {
         assertEquals(or.getValue(),false);    
      }
      
+       @Test  
+     public void testX1andX2Invalid() throws Exception {
+         
+        Circuit x1 = factory.createConstant();
+        Circuit x2 = factory.createConstant();
+
+        Circuit and = factory.createAnd(x1, x2);
+         
+        x1.setValue("xxx");
+        x2.setValue(Boolean.valueOf(true));
+
+        assertEquals(and.getValue(), new Exception());
+     }
+     
 }
