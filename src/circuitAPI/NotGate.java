@@ -40,7 +40,7 @@ public class NotGate<T extends Object> extends UnaryCircuit<T> {
         if(inputValue instanceof Boolean){
             result = ! (Boolean)inputValue;
         }
-        else if(inputValue instanceof Double) {
+        else if(inputValue instanceof Double && ((PairInput)operand.getValue()).checkRange()) {
             result = 1 - (Double) inputValue;
         }
 
