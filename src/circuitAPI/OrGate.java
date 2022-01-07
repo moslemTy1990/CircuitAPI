@@ -17,7 +17,7 @@ public class OrGate<T extends Object> extends BinaryCircuit<T> {
 
     @Override
     public T getValue() throws Exception {
-        if(rOperand.getValue() instanceof Boolean || lOperant.getValue() instanceof Boolean){
+        if(rOperand.getValue() instanceof Boolean && lOperant.getValue() instanceof Boolean){
             return getValueOfBoolean();
         }
         else if(rOperand.getValue() instanceof PairInput && lOperant.getValue() instanceof  PairInput){
