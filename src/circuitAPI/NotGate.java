@@ -37,6 +37,9 @@ public class NotGate<T extends Object> extends UnaryCircuit<T> {
         Object inputValue = ((PairInput)operand.getValue()).getInputValue();
         Object result = null;
 
+        if(!((PairInput)operand.getValue()).validaPair())
+            throw new Exception("Invalid Input Type");
+
         if(inputValue instanceof Boolean){
             result = ! (Boolean)inputValue;
         }

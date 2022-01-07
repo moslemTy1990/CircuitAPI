@@ -13,6 +13,12 @@ public class PairInput<T extends Object>{
 
     public  T getInputValue(){return inputValue;}
 
+    protected boolean validaPair(){
+        if(!(inputValue instanceof Boolean) || !(inputValue instanceof Double))
+            return false;
+
+        return true;
+    }
     protected boolean validPairs(PairInput otherPair){
         if((otherPair.getInputType() != inputType) ||
                 (otherPair.getInputValue() instanceof Boolean && inputValue instanceof Double) ||

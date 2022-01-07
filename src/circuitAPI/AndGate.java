@@ -45,6 +45,9 @@ public class AndGate<T extends Object> extends BinaryCircuit<T>{
         Object inputValue2 = ((PairInput)lOperant.getValue()).getInputValue();
         Object result = null;
 
+        if(!((PairInput)rOperand.getValue()).validaPair() || !((PairInput)lOperant.getValue()).validaPair())
+            throw new Exception("Invalid Input Type");
+
         if(inputValue1 instanceof Boolean && inputValue2 instanceof Boolean){
             result = (Boolean)inputValue1 && (Boolean)inputValue2;
         }

@@ -42,10 +42,13 @@ public class OrGate<T extends Object> extends BinaryCircuit<T> {
         Object inputValue2 = ((PairInput)lOperant.getValue()).getInputValue();
         Object result = null;
 
+        if(!((PairInput)rOperand.getValue()).validaPair() || !((PairInput)lOperant.getValue()).validaPair())
+            throw new Exception("Invalid Input Type");
+
         if(inputValue1 instanceof Boolean && inputValue2 instanceof Boolean){
             result = (Boolean)inputValue1 || (Boolean)inputValue2;
         }
-        else if(inputValue1 instanceof Double && inputValue2 instanceof Double
+        else if(inputValue1 instanceof Number && inputValue2 instanceof Number
                 && ((PairInput)rOperand.getValue()).checkRange() && ((PairInput)lOperant.getValue()).checkRange()) {
             result = 1 - (1 -(Double) inputValue1) * (1 - (Double) inputValue2);
         }
