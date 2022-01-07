@@ -25,5 +25,9 @@ public class CircuitFactory<T> {
     
     public Circuit createOr(Circuit lCircuit, Circuit rCircuit){
          return new OrGate<T>(lCircuit,rCircuit);
-    }    
+    }
+
+    public Circuit createGte(Circuit lCircuit, Circuit rCircuit){
+        return new GteGate<T>(lCircuit,rCircuit);
+    }
 }

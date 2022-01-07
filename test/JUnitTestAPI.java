@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 
-package test;
 import circuitAPI.Circuit;
 import circuitAPI.CircuitFactory;
 import circuitAPI.PairInput;
