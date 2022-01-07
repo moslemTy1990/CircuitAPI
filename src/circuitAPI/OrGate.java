@@ -43,7 +43,7 @@ public class OrGate<T extends Object> extends BinaryCircuit<T> {
         Object result = null;
 
         if(inputValue1 instanceof Boolean && inputValue2 instanceof Boolean){
-            result = getValueOfBoolean();
+            result = (Boolean)inputValue1 || (Boolean)inputValue2;
         }
         else if(inputValue1 instanceof Double && inputValue2 instanceof Double
                 && ((PairInput)rOperand.getValue()).checkRange() && ((PairInput)lOperant.getValue()).checkRange()) {
