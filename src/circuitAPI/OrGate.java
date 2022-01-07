@@ -20,10 +20,12 @@ public class OrGate<T extends Object> extends BinaryCircuit<T> {
         if(rOperand.getValue() instanceof Boolean && lOperant.getValue() instanceof Boolean){
             return getValueOfBoolean();
         }
-        else if(rOperand.getValue() instanceof PairInput && lOperant.getValue() instanceof  PairInput){
+        else if(rOperand.getValue() instanceof PairInput && lOperant.getValue() instanceof  PairInput
+                && ((PairInput) rOperand.getValue()).validPairs((PairInput)lOperant.getValue())){
             return getValueOfPairInput();
         }
-        else if(!(rOperand.getValue() instanceof Boolean) || !(lOperant.getValue() instanceof Boolean))
+        else if((!(rOperand.getValue() instanceof PairInput) && !(lOperant.getValue() instanceof PairInput)) &&
+                (!(rOperand.getValue() instanceof Boolean) || !(lOperant.getValue() instanceof Boolean)))
             throw new Exception("The input type of OR should be Boolean");
         else
             throw new Exception("Invalid Input Type");
@@ -43,7 +45,8 @@ public class OrGate<T extends Object> extends BinaryCircuit<T> {
         if(inputValue1 instanceof Boolean && inputValue2 instanceof Boolean){
             result = getValueOfBoolean();
         }
-        else if(inputValue1 instanceof Double && inputValue2 instanceof Double) {
+        else if(inputValue1 instanceof Double && inputValue2 instanceof Double
+                && ((PairInput)rOperand.getValue()).checkRange() && ((PairInput)lOperant.getValue()).checkRange()) {
             result = 1 - (1 -(Double) inputValue1) * ((Double) inputValue2);
         }
         return (T) new PairInput(((PairInput)rOperand.getValue()).getInputType(), result);
