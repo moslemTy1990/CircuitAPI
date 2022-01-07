@@ -7,6 +7,7 @@
 package test;
 import circuitAPI.Circuit;
 import circuitAPI.CircuitFactory;
+import circuitAPI.PairInput;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -161,6 +162,48 @@ public class JUnitTestAPI {
             NotX1andX2OrX3andNotX1.getValue();
         } catch (Exception exception) {
             assertThat(exception.getMessage(), is("The input type of AND should be Boolean"));
+        }
+    }
+
+    @Test
+    public void testX1andX2_PairInputBoolean(){
+        Circuit x1 = factory.createConstant();
+        Circuit x2 = factory.createConstant();
+
+        Circuit and = factory.createAnd(x1, x2);
+
+
+        PairInput input1 = new PairInput(true, false);
+        PairInput input2 = new PairInput(true, true);
+
+        try {
+            assertEquals(new PairInput<>(true, false), and.getValue());
+        }
+        catch (Exception e){
+
+        }
+    }
+
+    @Test
+    public void testX1andX2_PairInputDouble() {
+
+        Circuit x1 = factory.createConstant();
+        Circuit x2 = factory.createConstant();
+
+        Circuit and = factory.createAnd(x1, x2);
+
+        PairInput input1 = new PairInput(false, 0.25);
+        PairInput input2 = new PairInput(false, 0.5);
+
+        x1.setValue(input1);
+        x2.setValue(input2);
+
+
+        try {
+            assertEquals(new PairInput<>(false, 0.125), and.getValue());
+        }
+        catch (Exception e){
+            System.out.println("Exception");
         }
     }
 }
