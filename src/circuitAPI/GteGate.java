@@ -1,10 +1,5 @@
 package circuitAPI;
 
-import org.hamcrest.Factory;
-
-import static org.hamcrest.CoreMatchers.is;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
 
 public class GteGate<T extends Object> extends BinaryCircuit<T>{
 
