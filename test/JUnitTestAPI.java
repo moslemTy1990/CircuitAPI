@@ -176,11 +176,16 @@ public class JUnitTestAPI {
         PairInput input1 = new PairInput(true, false);
         PairInput input2 = new PairInput(true, true);
 
-        try {
-            assertEquals(new PairInput<>(true, false), and.getValue());
-        }
-        catch (Exception e){
+        x1.setValue(input1);
+        x2.setValue(input2);
 
+        try {
+            PairInput result = (PairInput) and.getValue();
+            assertEquals(true, result.getInputType());
+            assertEquals(false, result.getInputValue());
+        }
+        catch (Exception exception){
+            assertThat(exception.getMessage(), is("Invalid Input Type"));
         }
     }
 
@@ -200,10 +205,12 @@ public class JUnitTestAPI {
 
 
         try {
-            assertEquals(new PairInput<>(false, 0.125), and.getValue());
+            PairInput result = (PairInput) and.getValue();
+            assertEquals(false, result.getInputType());
+            assertEquals(0.125, result.getInputValue());
         }
-        catch (Exception e){
-            System.out.println("Exception");
+        catch (Exception exception){
+            assertThat(exception.getMessage(), is("Invalid Input Type"));
         }
     }
 }
