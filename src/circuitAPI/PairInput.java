@@ -8,4 +8,8 @@ public class PairInput<T extends Object>{
         this.inputType = inputType;
         this.inputValue = inputValue;
     }
+
+    public Boolean getInputType(){return inputType;}
+
+    public  T getInputValue(){return inputValue;}
 }
