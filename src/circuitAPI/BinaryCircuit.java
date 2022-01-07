@@ -15,7 +15,7 @@ public class BinaryCircuit<T extends Object> implements Circuit<T>{
     protected Circuit lOperant;
     protected Circuit rOperand;
 
-    protected BinaryCircuit(Circuit rCircuit,Circuit lCircuit){
+    protected BinaryCircuit(Circuit lCircuit,Circuit rCircuit){
       this.lOperant = lCircuit;
       this.rOperand = rCircuit;
     }
