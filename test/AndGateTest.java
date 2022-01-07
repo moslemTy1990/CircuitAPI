@@ -25,6 +25,7 @@ public class AndGateTest {
         x2.setValue(Boolean.valueOf(true));
 
         assertEquals(and.getValue(),true);
+        System.out.println(and.getValue());
     }
     @Test
     public void testX1andX2Boolean2() throws Exception{
@@ -36,6 +37,7 @@ public class AndGateTest {
         x1.setValue(Boolean.valueOf(true));
         x2.setValue(Boolean.valueOf(false));
         assertEquals(x1Andx2.getValue(),false);
+        System.out.println(x1Andx2.getValue());
     }
 
     @Test
@@ -48,6 +50,7 @@ public class AndGateTest {
         x1.setValue(Boolean.valueOf(false));
         x2.setValue(Boolean.valueOf(true));
         assertEquals(x1Andx2.getValue(),false);
+        System.out.println(x1Andx2.getValue());
     }
 
     @Test
@@ -68,6 +71,7 @@ public class AndGateTest {
         PairInput result = (PairInput) and.getValue();
         assertEquals(true, result.getInputType());
         assertEquals(false, result.getInputValue());
+        System.out.println(result.getInputType() + "," + result.getInputValue());
     }
 
     @Test
@@ -88,6 +92,7 @@ public class AndGateTest {
         PairInput result = (PairInput) and.getValue();
         assertEquals(true, result.getInputType());
         assertEquals(false, result.getInputValue());
+        System.out.println(result.getInputType() + "," + result.getInputValue());
     }
 
     @Test
@@ -107,6 +112,7 @@ public class AndGateTest {
         PairInput result = (PairInput) and.getValue();
         assertEquals(false, result.getInputType());
         assertEquals(0.125, result.getInputValue());
+        System.out.println(result.getInputType() + "," + result.getInputValue());
     }
 
     @Test
@@ -122,6 +128,7 @@ public class AndGateTest {
         PairInput result = (PairInput) x1Andx2.getValue();
         assertEquals(false, result.getInputType());
         assertEquals(0.0, result.getInputValue());
+        System.out.println(result.getInputType() + "," + result.getInputValue());
     }
 
     @Test
@@ -138,6 +145,7 @@ public class AndGateTest {
         try {
             and.getValue();
         } catch (Exception exception) {
+            System.out.println(exception.getMessage());
             assertThat(exception.getMessage(), is("The input type of AND should be Boolean"));
         }
     }
@@ -156,6 +164,7 @@ public class AndGateTest {
         try {
             and.getValue();
         } catch (Exception exception) {
+            System.out.println(exception.getMessage());
             assertThat(exception.getMessage(), is("The input type of AND should be Boolean"));
         }
     }
@@ -175,6 +184,7 @@ public class AndGateTest {
         try {
             x1andx2.getValue();
         } catch (Exception exception) {
+            System.out.println(exception.getMessage());
             assertThat(exception.getMessage(), is("Invalid Input Type"));
         }
     }
@@ -194,6 +204,7 @@ public class AndGateTest {
         try {
             x1andx2.getValue();
         } catch (Exception exception) {
+            System.out.println(exception.getMessage());
             assertThat(exception.getMessage(), is("Invalid Input Type"));
         }
     }
@@ -212,6 +223,7 @@ public class AndGateTest {
         try {
             x1andx2.getValue();
         } catch (Exception exception) {
+            System.out.println(exception.getMessage());
             assertThat(exception.getMessage(), is("Invalid Input Range"));
         }
     }
@@ -230,6 +242,7 @@ public class AndGateTest {
         try {
             x1Andx2.getValue();
         } catch (Exception exception) {
+            System.out.println(exception.getMessage());
             assertThat(exception.getMessage(), is("Invalid Input Type"));
         }
     }

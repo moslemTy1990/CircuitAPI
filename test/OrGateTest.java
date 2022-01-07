@@ -24,6 +24,7 @@ public class OrGateTest {
         x1.setValue(Boolean.valueOf(true));
         x2.setValue(Boolean.valueOf(true));
         assertEquals(x1Orx2.getValue(),true);
+        System.out.println(x1Orx2.getValue());
     }
 
     @Test
@@ -36,6 +37,7 @@ public class OrGateTest {
         x1.setValue(Boolean.valueOf(true));
         x2.setValue(Boolean.valueOf(false));
         assertEquals(x1Orx2.getValue(),true);
+        System.out.println(x1Orx2.getValue());
     }
 
     @Test
@@ -48,6 +50,7 @@ public class OrGateTest {
         x1.setValue(Boolean.valueOf(false));
         x2.setValue(Boolean.valueOf(true));
         assertEquals(x1Orx2.getValue(),true);
+        System.out.println(x1Orx2.getValue());
     }
 
     @Test
@@ -62,6 +65,7 @@ public class OrGateTest {
         PairInput result = (PairInput) x1Orx2.getValue();
         assertEquals(false, result.getInputType());
         assertEquals(0.625, result.getInputValue());
+        System.out.println(result.getInputType() + "," + result.getInputValue());
     }
 
     @Test
@@ -77,6 +81,7 @@ public class OrGateTest {
         PairInput result = (PairInput) x1Orx2.getValue();
         assertEquals(true, result.getInputType());
         assertEquals(true, result.getInputValue());
+        System.out.println(result.getInputType() + "," + result.getInputValue());
     }
 
     @Test
@@ -92,6 +97,7 @@ public class OrGateTest {
         PairInput result = (PairInput) x1Orx2.getValue();
         assertEquals(true, result.getInputType());
         assertEquals(true, result.getInputValue());
+        System.out.println(result.getInputType() + "," + result.getInputValue());
     }
 
 
@@ -108,6 +114,7 @@ public class OrGateTest {
         PairInput result = (PairInput) x1Orx2.getValue();
         assertEquals(false, result.getInputType());
         assertEquals(1.0, result.getInputValue());
+        System.out.println(result.getInputType() + "," + result.getInputValue());
     }
 
     @Test
@@ -124,6 +131,7 @@ public class OrGateTest {
         try {
             or.getValue();
         } catch (Exception exception) {
+            System.out.println(exception.getMessage());
             assertThat(exception.getMessage(), is("The input type of OR should be Boolean"));
         }
     }
@@ -142,6 +150,7 @@ public class OrGateTest {
         try {
             or.getValue();
         } catch (Exception exception) {
+            System.out.println(exception.getMessage());
             assertThat(exception.getMessage(), is("The input type of OR should be Boolean"));
         }
     }
@@ -161,6 +170,7 @@ public class OrGateTest {
         try {
             x1Orx2.getValue();
         } catch (Exception exception) {
+            System.out.println(exception.getMessage());
             assertThat(exception.getMessage(), is("Invalid Input Type"));
         }
     }
@@ -180,6 +190,7 @@ public class OrGateTest {
         try {
             x1Orx2.getValue();
         } catch (Exception exception) {
+            System.out.println(exception.getMessage());
             assertThat(exception.getMessage(), is("Invalid Input Type"));
         }
     }
@@ -199,6 +210,7 @@ public class OrGateTest {
         try {
             x1Orx2.getValue();
         } catch (Exception exception) {
+            System.out.println(exception.getMessage());
             assertThat(exception.getMessage(), is("Invalid Input Range"));
         }
     }
@@ -218,6 +230,7 @@ public class OrGateTest {
         try {
             x1Orx2.getValue();
         } catch (Exception exception) {
+            System.out.println(exception.getMessage());
             assertThat(exception.getMessage(), is("Invalid Input Type"));
         }
     }
