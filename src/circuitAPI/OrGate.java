@@ -47,7 +47,7 @@ public class OrGate<T extends Object> extends BinaryCircuit<T> {
         }
         else if(inputValue1 instanceof Double && inputValue2 instanceof Double
                 && ((PairInput)rOperand.getValue()).checkRange() && ((PairInput)lOperant.getValue()).checkRange()) {
-            result = 1 - (1 -(Double) inputValue1) * ((Double) inputValue2);
+            result = 1 - (1 -(Double) inputValue1) * (1 - (Double) inputValue2);
         }
         return (T) new PairInput(((PairInput)rOperand.getValue()).getInputType(), result);
     }
