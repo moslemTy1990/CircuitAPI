@@ -102,26 +102,12 @@ public class OrGateTest {
         Circuit x1Orx2 = factory.createOr(x1, x2);
 
 
-        x1.setValue(new PairInput(false, 1));
-        x2.setValue(new PairInput(false, 0));
+        x1.setValue(new PairInput(false, 1.0));
+        x2.setValue(new PairInput(false, 0.0));
 
         PairInput result = (PairInput) x1Orx2.getValue();
         assertEquals(false, result.getInputType());
-        assertEquals(1, result.getInputValue());
-    }
-    @Test
-    public void testX1orX2PairOneZero_() throws Exception{
-        Circuit x1 = factory.createConstant();
-        Circuit x2 = factory.createConstant();
-        Circuit x1Orx2 = factory.createOr(x1, x2);
-
-
-        x1.setValue(new PairInput(false, new Double(1)));
-        x2.setValue(new PairInput(false, new Double(0)));
-
-        PairInput result = (PairInput) x1Orx2.getValue();
-        assertEquals(false, result.getInputType());
-        assertEquals(new Double(1), result.getInputValue());
+        assertEquals(1.0, result.getInputValue());
     }
 
     @Test
@@ -207,8 +193,27 @@ public class OrGateTest {
         Circuit x1Orx2 = factory.createOr(x1, x2);
 
 
-        x1.setValue(new PairInput(true, 0.5));
-        x2.setValue(new PairInput(true, 2));
+        x1.setValue(new PairInput(false, 0.5));
+        x2.setValue(new PairInput(false, 2.0));
+
+        try {
+            x1Orx2.getValue();
+        } catch (Exception exception) {
+            assertThat(exception.getMessage(), is("Invalid Input Range"));
+        }
+    }
+
+
+    @Test
+    public void testX1orX2PairOneZeroInvalidInteger() throws Exception{
+        Circuit x1 = factory.createConstant();
+        Circuit x2 = factory.createConstant();
+        Circuit x1Orx2 = factory.createOr(x1, x2);
+
+
+        x1.setValue(new PairInput(false, 1));
+        x2.setValue(new PairInput(false, 0));
+
 
         try {
             x1Orx2.getValue();
