@@ -31,7 +31,7 @@ public class PairInput<T extends Object>{
     protected boolean checkRange() throws Exception {
         if(inputType == false && !(inputValue instanceof Double))
             throw new Exception("Invalid Input Type");
-        else if(inputType == false && ((Double)inputValue) < 0 &&  ((Double)inputValue) > 1)
+        else if(inputType == false && (((Double)inputValue) < 0 ||  ((Double)inputValue) > 1))
             throw new Exception("Invalid Input Range");
 
         return true;
