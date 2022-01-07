@@ -3,12 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package circuitelements;
-
-import circuitfactory.Circuit;
-import javax.swing.text.StyledEditorKit;
-import java.sql.SQLIntegrityConstraintViolationException;
-import java.util.function.BinaryOperator;
+package circuitAPI;
 
 /**
  *
@@ -16,7 +11,7 @@ import java.util.function.BinaryOperator;
  */
 public class AndGate<T extends Object> extends BinaryCircuit<T>{
 
-    public AndGate(Circuit rCircuit, Circuit lCircuit) {
+    protected AndGate(Circuit rCircuit, Circuit lCircuit) {
         super(rCircuit, lCircuit);
     }
     

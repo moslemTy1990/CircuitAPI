@@ -3,16 +3,14 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package circuitelements;
-
-import circuitfactory.Circuit;
+package circuitAPI;
 
 /**
  *
  * @author Renisa, Shyam, Shabnam, Moslem
  */
 public class NotGate<T extends Object> extends UnaryCircuit<T> {
-    public NotGate(Circuit circuit) {super(circuit);
+    protected NotGate(Circuit circuit) {super(circuit);
     }
 
     @Override

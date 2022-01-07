@@ -3,12 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package circuitfactory;
-
-import circuitelements.Constant;
-import circuitelements.NotGate;
-import circuitelements.AndGate;
-import circuitelements.OrGate;
+package circuitAPI;
 
 /**
  *

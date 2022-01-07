@@ -5,8 +5,8 @@
  */
 
 package test;
-import circuitfactory.Circuit;
-import circuitfactory.CircuitFactory;
+import circuitAPI.Circuit;
+import circuitAPI.CircuitFactory;
 import org.junit.Test;
 import static org.junit.Assert.*;
 

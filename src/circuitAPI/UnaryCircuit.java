@@ -3,9 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package circuitelements;
-
-import circuitfactory.Circuit;
+package circuitAPI;
 
 /**
  *
@@ -15,7 +13,7 @@ public class UnaryCircuit<T extends Object> implements Circuit<T>{
 
     protected Circuit operand;
 
-    public UnaryCircuit(Circuit circuit){
+    protected UnaryCircuit(Circuit circuit){
         this.operand = circuit;
     }
 

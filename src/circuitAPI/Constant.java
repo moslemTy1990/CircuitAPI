@@ -3,10 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package circuitelements;
-
-import circuitfactory.Circuit;
-import java.awt.*;
+package circuitAPI;
 
 /**
  *
@@ -15,9 +12,9 @@ import java.awt.*;
 public class Constant<T extends Object> implements Circuit<T>{
     private T value;
 
-    public Constant(){ }
-       
-    public Constant(T value){
+    protected Constant(){ }
+
+    protected Constant(T value){
         this.value =value;
     }
 

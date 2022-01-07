@@ -3,9 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package circuitelements;
-
-import circuitfactory.Circuit;
+package circuitAPI;
 
 
 /**
@@ -16,8 +14,8 @@ public class BinaryCircuit<T extends Object> implements Circuit<T>{
     
     protected Circuit lOperant;
     protected Circuit rOperand;
-    
-    public BinaryCircuit(Circuit rCircuit,Circuit lCircuit){
+
+    protected BinaryCircuit(Circuit rCircuit,Circuit lCircuit){
       this.lOperant = lCircuit;
       this.rOperand = rCircuit;
     }
