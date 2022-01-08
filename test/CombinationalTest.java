@@ -14,8 +14,7 @@ public class CombinationalTest {
         factory = new CircuitFactory() ;
     }
 
-
-    @Test
+   @Test
     public void testX1andX2orX3() throws Exception {
 
         Circuit x1 = factory.createConstant();
@@ -207,7 +206,7 @@ public class CombinationalTest {
         
         Circuit and = factory.createAnd(x1,x2);
         Circuit notNot = factory.createNot(and);
-        Circuit or = factory.createNot(notNot);
+        Circuit or = factory.createOr(notNot,x3);
         
         PairInput input1 = new PairInput(true, true);
         PairInput input2 = new PairInput(true, true);
@@ -219,7 +218,6 @@ public class CombinationalTest {
         
         try {
             PairInput result = (PairInput) or.getValue();
-       
             assertEquals(true, result.getInputType());
             assertEquals(true, result.getInputValue());
         }
@@ -227,15 +225,15 @@ public class CombinationalTest {
             assertThat(exception.getMessage(), is("Invalid Input Type"));
         }    
     }
-   @Test  // to check........................................
+   @Test  
     public void testNotX1andX2orX3_PairInvalidInputBoolean(){
         Circuit x1 = factory.createConstant();
         Circuit x2 = factory.createConstant();
         Circuit x3 = factory.createConstant();
         
         Circuit and = factory.createAnd(x1,x2);
-        Circuit notNot = factory.createNot(and);
-        Circuit or = factory.createNot(notNot);
+        Circuit not = factory.createNot(and);
+        Circuit or = factory.createOr(not,x3);
         
         PairInput input1 = new PairInput(true, true);
         PairInput input2 = new PairInput(true, true);
@@ -247,9 +245,6 @@ public class CombinationalTest {
         
         try {
             PairInput result = (PairInput) or.getValue();
-       
-            assertEquals(true, result.getInputType());
-            assertEquals(true, result.getInputValue());
         }
         catch (Exception exception){
             assertThat(exception.getMessage(), is("Invalid Input Type"));
@@ -263,7 +258,7 @@ public class CombinationalTest {
             Circuit x3 = factory.createConstant();
             
             Circuit gte = factory.createGte(x1, x2);
-            Circuit and = factory.createGte(gte, x3);
+            Circuit and = factory.createAnd(gte, x3);
             
             PairInput input1 = new PairInput(true, true);
             PairInput input2 = new PairInput(true, true);
@@ -275,8 +270,34 @@ public class CombinationalTest {
 
             try {
                 PairInput result = (PairInput) and.getValue();
+            }
+            catch (Exception exception){
+                assertThat(exception.getMessage(), is("Invalid Input Type"));
+            }
+        }
+        
+        @Test
+        public void testX1gteX2AndNotX3_PairInput(){
+            Circuit x1 = factory.createConstant();
+            Circuit x2 = factory.createConstant();
+            Circuit x3 = factory.createConstant();
+            
+            Circuit gte = factory.createGte(x1, x2);
+            Circuit notX3 = factory.createNot(x3);
+            Circuit and = factory.createAnd(gte, notX3);
+            
+            PairInput input1 = new PairInput(false, .6);
+            PairInput input2 = new PairInput(false, .9);
+            PairInput input3 = new PairInput(true, true);
+
+            x1.setValue(input1);
+            x2.setValue(input2);
+            x3.setValue(input3);
+
+            try {
+                PairInput result = (PairInput) and.getValue();
                 assertEquals(true, result.getInputType());
-                assertEquals(true, result.getInputValue());
+                assertEquals(false, result.getInputValue());
             }
             catch (Exception exception){
                 assertThat(exception.getMessage(), is("Invalid Input Type"));
