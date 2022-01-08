@@ -28,7 +28,10 @@ And/Or/Not : these gates are the same logical operators that operate like below:
 
 GTE Gate Operates like following:
 
-    X1 gte X2 = (X1 and X2) or not(X1)
+    X1 gte X2 = this gate works just for PairInput(Boolean, Double)
+        if (the double part of x1 >= x2)  => the result is (true, true)
+        otherwise the result is (true, false)
+        
 
 
 ## Supported Data Types #
