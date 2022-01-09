@@ -17,7 +17,7 @@ CircuitFactory. It can be used as bellow for creating (X1 And X2) logic:
     Circuit and = factory.createAnd(x1, x2);
     x1.setValue(Boolean.valueOf(true));
     x2.setValue(Boolean.valueOf(true));
-
+    
 ### What is each Gates functions:
 
 And/Or/Not : these gates are the same logical operators that operate like below:
@@ -31,8 +31,19 @@ GTE Gate Operates like following:
     X1 gte X2 = this gate works just for PairInput(Boolean, Double)
         if (the double part of x1 >= x2)  => the result is (true, true)
         otherwise the result is (true, false)
-        
 
+
+### How to create gates and inputs:
+Gates is created like above example:
+
+    OR  =>  factory.createOr(x1, x2);
+    AND =>  factory.createAnd(x1, x2);
+    NOT => factory.createNot(x1);
+    GTE =>  factory.createGte(x1, x2);
+
+the Inputs is also created as following:
+
+    Circuit x2 = factory.createConstant();
 
 ## Supported Data Types #
 Boolean Data Type are supported by gates.

@@ -36,4 +36,12 @@ public class PairInput<T extends Object>{
 
         return true;
     }
+
+    @Override
+    public String toString() {
+        return "(" +
+                "" + inputType +
+                ", " + inputValue +
+                ')';
+    }
 }
