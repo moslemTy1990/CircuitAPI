@@ -9,7 +9,7 @@ package circuitAPI;
  *
  * @author Renisa, Shyam, Shabnam, Moslem
  */
-public class CircuitFactory<T> {
+public final class CircuitFactory<T> {
     
     public Circuit<T> createAnd(Circuit<T> lCircuit, Circuit<T> rCircuit){
         return new AndGate<T>(lCircuit,rCircuit);

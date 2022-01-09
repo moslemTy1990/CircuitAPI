@@ -9,7 +9,7 @@ package circuitAPI;
  *
  * @author Renisa, Shyam, Shabnam, Moslem
  */
-public class UnaryCircuit<T extends Object> implements Circuit<T>{
+class UnaryCircuit<T extends Object> implements Circuit<T>{
 
     protected Circuit operand;
 
@@ -26,5 +26,4 @@ public class UnaryCircuit<T extends Object> implements Circuit<T>{
     public void setValue(T t) {
 
     }
-
 }

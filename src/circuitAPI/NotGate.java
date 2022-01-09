@@ -9,7 +9,7 @@ package circuitAPI;
  *
  * @author Renisa, Shyam, Shabnam, Moslem
  */
-public class NotGate<T extends Object> extends UnaryCircuit<T> {
+class NotGate<T extends Object> extends UnaryCircuit<T> {
     protected NotGate(Circuit circuit) {super(circuit);
     }
 
@@ -28,12 +28,12 @@ public class NotGate<T extends Object> extends UnaryCircuit<T> {
 
     }
     
-     public T getValueOfBoolean() throws Exception {
+     private T getValueOfBoolean() throws Exception {
         Object value = ! (Boolean)operand.getValue();
         return (T)value;
     }
 
-    public T getValueOfPairInput() throws Exception {
+    private T getValueOfPairInput() throws Exception {
         Object inputValue = ((PairInput)operand.getValue()).getInputValue();
         Object result = null;
 

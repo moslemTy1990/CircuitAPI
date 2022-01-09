@@ -9,7 +9,7 @@ package circuitAPI;
  *
  * @author Renisa, Shyam, Shabnam, Moslem
  */
-public class OrGate<T extends Object> extends BinaryCircuit<T> {
+class OrGate<T extends Object> extends BinaryCircuit<T> {
     protected OrGate(Circuit rCircuit, Circuit lCircuit) {
         super(rCircuit, lCircuit);
     }
@@ -32,12 +32,12 @@ public class OrGate<T extends Object> extends BinaryCircuit<T> {
 
     }
 
-    public T getValueOfBoolean() throws Exception {
+    private T getValueOfBoolean() throws Exception {
         Object value= (Boolean)rOperand.getValue() || (Boolean)lOperant.getValue();
         return (T)value;
     }
 
-    public T getValueOfPairInput() throws Exception {
+    private T getValueOfPairInput() throws Exception {
         Object inputValue1 = ((PairInput)rOperand.getValue()).getInputValue();
         Object inputValue2 = ((PairInput)lOperant.getValue()).getInputValue();
         Object result = null;

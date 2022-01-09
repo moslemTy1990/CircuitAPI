@@ -10,7 +10,7 @@ package circuitAPI;
  *
  * @author Renisa, Shyam, Shabnam, Moslem
  */
-public class BinaryCircuit<T extends Object> implements Circuit<T>{
+class BinaryCircuit<T extends Object> implements Circuit<T>{
     
     protected Circuit lOperant;
     protected Circuit rOperand;

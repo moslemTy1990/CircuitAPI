@@ -11,7 +11,7 @@ import javax.swing.text.StyledEditorKit;
  *
  * @author Renisa, Shyam, Shabnam, Moslem
  */
-public class AndGate<T extends Object> extends BinaryCircuit<T>{
+class AndGate<T extends Object> extends BinaryCircuit<T>{
 
     protected AndGate(Circuit rCircuit, Circuit lCircuit) {
         super(rCircuit, lCircuit);
@@ -35,12 +35,12 @@ public class AndGate<T extends Object> extends BinaryCircuit<T>{
 
     }
 
-    public T getValueOfBoolean() throws Exception {
+    private T getValueOfBoolean() throws Exception {
         Object value= (Boolean)rOperand.getValue() && (Boolean)lOperant.getValue();
         return (T)value;
     }
 
-    public T getValueOfPairInput() throws Exception {
+    private T getValueOfPairInput() throws Exception {
         Object inputValue1 = ((PairInput)rOperand.getValue()).getInputValue();
         Object inputValue2 = ((PairInput)lOperant.getValue()).getInputValue();
         Object result = null;

@@ -1,7 +1,7 @@
 package circuitAPI;
 
 
-public class GteGate<T extends Object> extends BinaryCircuit<T>{
+class GteGate<T extends Object> extends BinaryCircuit<T>{
 
     protected GteGate(Circuit<T> lOperand, Circuit<T> rOperand){
         super(lOperand, rOperand);
@@ -17,12 +17,12 @@ public class GteGate<T extends Object> extends BinaryCircuit<T>{
             throw new Exception("Invalid Input Type");
     }
 
-    public T getValueOfBoolean() throws Exception {
+    private T getValueOfBoolean() throws Exception {
         Object value= (Boolean)rOperand.getValue() && (Boolean)lOperant.getValue();
         return (T)value;
     }
 
-    public T getValueOfPairInput() throws Exception {
+    private T getValueOfPairInput() throws Exception {
         Object inputValue1 = ((PairInput)lOperant.getValue()).getInputValue();
         Object inputValue2 = ((PairInput)rOperand.getValue()).getInputValue();
         Object result = null;

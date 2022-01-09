@@ -9,7 +9,7 @@ package circuitAPI;
  *
  * @author Renisa, Shyam, Shabnam, Moslem
  */
-public class Constant<T extends Object> implements Circuit<T>{
+class Constant<T extends Object> implements Circuit<T>{
     private T value;
 
     protected Constant(){ }
