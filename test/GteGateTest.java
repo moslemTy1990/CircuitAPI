@@ -139,7 +139,6 @@ public class GteGateTest {
             assertEquals(false, result.getInputValue());
         }
         catch (Exception exception){
-            System.out.println(exception.getMessage());
             assertThat(exception.getMessage(), is("Invalid Input Type"));
         }
     }
@@ -162,7 +161,6 @@ public class GteGateTest {
             assertEquals(false, result.getInputValue());
         }
         catch (Exception exception){
-            System.out.println(exception.getMessage());
             assertThat(exception.getMessage(), is("Invalid Input Type"));
         }
     }
@@ -186,7 +184,6 @@ public class GteGateTest {
             assertEquals(true, result.getInputValue());
         }
         catch (Exception exception){
-            System.out.println(exception.getMessage());
             assertThat(exception.getMessage(), is("Invalid Input Type"));
         }
     }

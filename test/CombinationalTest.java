@@ -470,7 +470,6 @@ public class CombinationalTest {
         }
         catch (Exception exception){
             assertThat(exception.getMessage(), is("Invalid Input Range"));
-            System.out.println(exception.getMessage());
         }
     }
 }

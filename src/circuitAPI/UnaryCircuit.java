@@ -9,7 +9,8 @@ package circuitAPI;
  *
  * @author Renisa, Shyam, Shabnam, Moslem
  */
-class UnaryCircuit<T extends Object> implements Circuit<T>{
+
+abstract class UnaryCircuit<T extends Object> implements Circuit<T>{
 
     protected Circuit operand;
 
