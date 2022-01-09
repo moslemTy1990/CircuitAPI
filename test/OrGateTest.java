@@ -234,4 +234,24 @@ public class OrGateTest {
             assertThat(exception.getMessage(), is("Invalid Input Type"));
         }
     }
+
+
+    @Test
+    public void testX1orX2_invalidPair() throws Exception {
+
+        Circuit x1 = factory.createConstant();
+        Circuit x2 = factory.createConstant();
+        Circuit x1Orx2 = factory.createOr(x1, x2);
+
+
+        x1.setValue(new PairInput(true, 0.5));
+        x2.setValue(new PairInput(false, 0.5));
+
+        try {
+            x1Orx2.getValue();
+        } catch (Exception exception) {
+            System.out.println(exception.getMessage());
+            assertThat(exception.getMessage(), is("Invalid Input Type"));
+        }
+    }
 }

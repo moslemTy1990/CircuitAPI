@@ -347,4 +347,130 @@ public class CombinationalTest {
             assertThat(exception.getMessage(), is("Invalid Input Type"));
         }
     }
+
+
+    @Test
+    public void testX1andX2OrNotX1_1(){
+        //(x1 gte not(x1)) and x1
+        Circuit x1 = factory.createConstant();
+        Circuit x2 = factory.createConstant();
+
+        Circuit and = factory.createAnd(x1, x2);
+        Circuit notX1 = factory.createNot(x1);
+        Circuit or = factory.createOr(and,notX1);
+
+        PairInput input1 = new PairInput(true, true);
+        PairInput input2 = new PairInput(true, false);
+        x1.setValue(input1);
+        x1.setValue(input2);
+
+        try {
+            PairInput result = (PairInput) or.getValue();
+            assertEquals(true, result.getInputType());
+            assertEquals(false, result.getInputValue());
+        }
+        catch (Exception exception){
+            assertThat(exception.getMessage(), is("Invalid Input Type"));
+        }
+    }
+
+
+    @Test
+    public void testX1andX2OrNotX1_2(){
+        //(x1 gte not(x1)) and x1
+        Circuit x1 = factory.createConstant();
+        Circuit x2 = factory.createConstant();
+
+        Circuit and = factory.createAnd(x1, x2);
+        Circuit notX1 = factory.createNot(x1);
+        Circuit or = factory.createOr(and,notX1);
+
+        PairInput input1 = new PairInput(true, false);
+        PairInput input2 = new PairInput(true, true);
+        x1.setValue(input1);
+        x1.setValue(input2);
+
+        try {
+            PairInput result = (PairInput) or.getValue();
+            assertEquals(true, result.getInputType());
+            assertEquals(true, result.getInputValue());
+        }
+        catch (Exception exception){
+            assertThat(exception.getMessage(), is("Invalid Input Type"));
+        }
+    }
+
+    @Test
+    public void testX1andX2OrNotX1_3(){
+        //(x1 gte not(x1)) and x1
+        Circuit x1 = factory.createConstant();
+        Circuit x2 = factory.createConstant();
+
+        Circuit and = factory.createAnd(x1, x2);
+        Circuit notX1 = factory.createNot(x1);
+        Circuit or = factory.createOr(and,notX1);
+
+        PairInput input1 = new PairInput(false, 0.0);
+        PairInput input2 = new PairInput(false, 1.0);
+        x1.setValue(input1);
+        x1.setValue(input2);
+
+        try {
+            PairInput result = (PairInput) or.getValue();
+            assertEquals(false, result.getInputType());
+            assertEquals(1.0, result.getInputValue());
+        }
+        catch (Exception exception){
+            assertThat(exception.getMessage(), is("Invalid Input Type"));
+        }
+    }
+
+    @Test
+    public void testX1andX2OrNotX1_4(){
+        //(x1 gte not(x1)) and x1
+        Circuit x1 = factory.createConstant();
+        Circuit x2 = factory.createConstant();
+
+        Circuit and = factory.createAnd(x1, x2);
+        Circuit notX1 = factory.createNot(x1);
+        Circuit or = factory.createOr(and,notX1);
+
+        PairInput input1 = new PairInput(false, 0.5);
+        PairInput input2 = new PairInput(false, 0.5);
+        x1.setValue(input1);
+        x1.setValue(input2);
+
+        try {
+            PairInput result = (PairInput) or.getValue();
+            assertEquals(false, result.getInputType());
+            assertEquals(0.625, result.getInputValue());
+        }
+        catch (Exception exception){
+            assertThat(exception.getMessage(), is("Invalid Input Type"));
+        }
+    }
+
+    @Test
+    public void testX1andX2OrNotX1_5(){
+        //(x1 gte not(x1)) and x1
+        Circuit x1 = factory.createConstant();
+        Circuit x2 = factory.createConstant();
+
+        Circuit and = factory.createAnd(x1, x2);
+        Circuit notX1 = factory.createNot(x1);
+        Circuit or = factory.createOr(and,notX1);
+
+        PairInput input1 = new PairInput(false, 0.0);
+        PairInput input2 = new PairInput(false, 2.0);
+        x1.setValue(input1);
+        x1.setValue(input2);
+
+        try {
+            PairInput result = (PairInput) or.getValue();
+        }
+        catch (Exception exception){
+            assertThat(exception.getMessage(), is("Invalid Input Range"));
+            System.out.println(exception.getMessage());
+        }
+    }
 }
